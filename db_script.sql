@@ -1,0 +1,17 @@
+DROP DATABASE IF EXISTS ExpenseTrackerDB;
+CREATE DATABASE ExpenseTrackerDB;
+USE ExpenseTrackerDB;
+
+CREATE TABLE Expenses (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    amount DOUBLE NOT NULL,
+    category VARCHAR(50) NOT NULL,
+    description VARCHAR(150),
+    date_added TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE Budget (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    month_year VARCHAR(20) NOT NULL UNIQUE,
+    limit_amount DOUBLE NOT NULL
+);
